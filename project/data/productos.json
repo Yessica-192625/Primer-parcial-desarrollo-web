@@ -1,0 +1,20 @@
+[
+ {
+  "nombre": "Café Latte",
+  "precio": "$8.000",
+  "descripcion": "Café con leche",
+  "imagen": "https://i.imgur.com/7bKQZ6T.png"
+ },
+ {
+  "nombre": "Capuccino",
+  "precio": "$9.000",
+  "descripcion": "Espuma cremosa",
+  "imagen": "https://i.imgur.com/3bKQZ6T.png"
+ },
+ {
+  "nombre": "Croissant",
+  "precio": "$6.000",
+  "descripcion": "Recién horneado",
+  "imagen": "https://i.imgur.com/2bKQZ6T.png"
+ }
+]
