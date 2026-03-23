@@ -1,0 +1,171 @@
+:root {
+    --cafe-oscuro: #3d2b1f;
+    --crema: #f5f5dc;
+    --blanco: #ffffff;
+    --cafe-claro: #6f4e37;
+    --fuente-elegante: 'Playfair Display', serif;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    background-color: var(--crema);
+    overflow-x: hidden;
+}
+
+/* --- HEADER Y LOGO --- */
+.main-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    background: var(--crema);
+    position: relative;
+}
+
+.brand-logo {
+    font-family: var(--fuente-elegante);
+    font-size: 3.5rem;
+    color: var(--cafe-oscuro);
+    text-decoration: none;
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* --- BOTÓN HAMBURGUESA --- */
+.hamburger-btn {
+    position: absolute;
+    top: 45px;
+    left: 25px;
+    z-index: 1100;
+    background: var(--cafe-oscuro);
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    transition: transform 0.2s;
+}
+
+.hamburger-btn:hover { transform: scale(1.05); }
+
+.hamburger-btn span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    display: block;
+}
+
+/* --- SIDEBAR (MENÚ LATERAL) --- */
+.side-menu {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    background: var(--cafe-claro);
+    color: var(--blanco);
+    padding: 100px 20px 20px 20px;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    box-shadow: 5px 0 15px rgba(0,0,0,0.2);
+}
+
+.side-menu.active { left: 0; }
+.side-menu ul { list-style: none; padding: 0; }
+.side-menu ul li { margin-bottom: 25px; }
+.side-menu ul li a { color: white; text-decoration: none; font-size: 1.1rem; letter-spacing: 1px; }
+
+/* --- CABECERAS DE CATEGORÍA --- */
+.category-header {
+    height: 250px;
+    width: 95%;
+    max-width: 900px; /* Alineado con el ancho de la grilla */
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.category-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.category-header h2 {
+    font-family: var(--fuente-elegante);
+    font-size: 3.5rem;
+    color: var(--blanco);
+    z-index: 2;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    text-shadow: 2px 4px 10px rgba(0,0,0,0.5);
+}
+
+.drinks-bg { background-image: url('https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=1200'); }
+.food-bg { background-image: url('https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200'); }
+
+/* --- GRILLA DE PRODUCTOS (2x2 Centrada) --- */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Fuerza 2 columnas */
+    gap: 30px;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto 40px auto; /* Centra la grilla horizontalmente */
+}
+
+.product-card {
+    background: var(--blanco);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.product-card:hover { transform: translateY(-10px); }
+
+.product-img-container img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.product-info { padding: 20px; }
+.p-name { color: var(--cafe-oscuro); margin: 0 0 10px 0; font-size: 1.3rem; }
+.p-desc { color: #666; font-size: 0.9rem; margin-bottom: 15px; }
+.p-price { color: var(--cafe-claro); font-weight: bold; font-size: 1.2rem; }
+
+/* --- SECCIÓN RECOMENDADOS (Web Component) --- */
+.destacados-section {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: var(--fuente-elegante);
+    color: var(--cafe-oscuro);
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+}
+
+#web-component-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
